@@ -1,0 +1,17 @@
+version: '3.6'
+services:
+  apiav:
+    build: .
+    networks:
+      - app-network
+    ports:
+      - 9098:9098
+  mongoav:
+    image: mongo:4.2
+    networks:
+      - app-network
+    ports:
+      - 27017:27017
+
+networks:
+   app-network:
